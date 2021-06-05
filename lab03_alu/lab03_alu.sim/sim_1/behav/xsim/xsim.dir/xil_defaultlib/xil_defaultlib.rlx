@@ -1,0 +1,18 @@
+0.6
+2019.2
+Nov  6 2019
+21:57:16
+C:/vivado_workspace/lab03_alu/lab03_alu.sim/sim_1/behav/xsim/glbl.v,1573089660,verilog,,,,glbl,,,,,,,,
+C:/vivado_workspace/lab03_alu/lab03_alu.srcs/sim_1/new/alu_tb.v,1622157780,verilog,,,,alu_tb,,,,,,,,
+C:/vivado_workspace/lab03_alu/lab03_alu.srcs/sim_1/new/anode_mux_tb.v,1622253743,verilog,,,,anode_mux_tb,,,,,,,,
+C:/vivado_workspace/lab03_alu/lab03_alu.srcs/sim_1/new/btn_mux_tb.v,1622160709,verilog,,,,btn_mux_tb,,,,,,,,
+C:/vivado_workspace/lab03_alu/lab03_alu.srcs/sim_1/new/seg_decoder_tb.v,1622659516,verilog,,,,seg_decoder_tb,,,,,,,,
+C:/vivado_workspace/lab03_alu/lab03_alu.srcs/sim_1/new/segment_mux_tb.v,1622234254,verilog,,,,segment_mux_tb,,,,,,,,
+C:/vivado_workspace/lab03_alu/lab03_alu.srcs/sim_1/new/top_tb.v,1622254504,verilog,,,,top_tb,,,,,,,,
+C:/vivado_workspace/lab03_alu/lab03_alu.srcs/sources_1/new/alu.v,1622250406,verilog,,C:/vivado_workspace/lab03_alu/lab03_alu.srcs/sources_1/new/anode_mux.v,,alu,,,,,,,,
+C:/vivado_workspace/lab03_alu/lab03_alu.srcs/sources_1/new/anode_mux.v,1622253210,verilog,,C:/vivado_workspace/lab03_alu/lab03_alu.srcs/sources_1/new/btn_mux.v,,anode_mux,,,,,,,,
+C:/vivado_workspace/lab03_alu/lab03_alu.srcs/sources_1/new/btn_mux.v,1622160583,verilog,,C:/vivado_workspace/lab03_alu/lab03_alu.srcs/sources_1/new/clk_div_1mhz.v,,btn_mux,,,,,,,,
+C:/vivado_workspace/lab03_alu/lab03_alu.srcs/sources_1/new/clk_div_1mhz.v,1622163196,verilog,,C:/vivado_workspace/lab03_alu/lab03_alu.srcs/sources_1/new/seg_decoder.v,,clk_div_1mhz,,,,,,,,
+C:/vivado_workspace/lab03_alu/lab03_alu.srcs/sources_1/new/seg_decoder.v,1622659883,verilog,,C:/vivado_workspace/lab03_alu/lab03_alu.srcs/sim_1/new/seg_decoder_tb.v,,seg_decoder,,,,,,,,
+C:/vivado_workspace/lab03_alu/lab03_alu.srcs/sources_1/new/segment_mux.v,1622246588,verilog,,C:/vivado_workspace/lab03_alu/lab03_alu.srcs/sources_1/new/two_bit_counter.v,,segment_mux,,,,,,,,
+C:/vivado_workspace/lab03_alu/lab03_alu.srcs/sources_1/new/two_bit_counter.v,1622221076,verilog,,C:/vivado_workspace/lab03_alu/lab03_alu.srcs/sim_1/new/top_tb.v,,two_bit_counter,,,,,,,,

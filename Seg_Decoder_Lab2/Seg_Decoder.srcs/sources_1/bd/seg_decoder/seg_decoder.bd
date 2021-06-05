@@ -1,0 +1,471 @@
+{
+  "design": {
+    "design_info": {
+      "boundary_crc": "0xC16A01B1F9755F99",
+      "device": "xc7a35tcpg236-1",
+      "name": "seg_decoder",
+      "synth_flow_mode": "Hierarchical",
+      "tool_version": "2019.2",
+      "validated": "true"
+    },
+    "design_tree": {
+      "Debouncer_0": "",
+      "two_bit_counter_0": "",
+      "clk_divider_1khz": "",
+      "decoder1": "",
+      "decoder2": "",
+      "decoder0": "",
+      "decoder3": "",
+      "multiplexer_0": ""
+    },
+    "ports": {
+      "clkin": {
+        "type": "clk",
+        "direction": "I",
+        "parameters": {
+          "ASSOCIATED_RESET": {
+            "value": "reset",
+            "value_src": "default"
+          },
+          "CLK_DOMAIN": {
+            "value": "seg_decoder_clkin",
+            "value_src": "default"
+          },
+          "FREQ_HZ": {
+            "value": "100000000",
+            "value_src": "default"
+          },
+          "INSERT_VIP": {
+            "value": "0",
+            "value_src": "default"
+          },
+          "PHASE": {
+            "value": "0.000",
+            "value_src": "default"
+          }
+        }
+      },
+      "reset": {
+        "type": "rst",
+        "direction": "I",
+        "parameters": {
+          "INSERT_VIP": {
+            "value": "0",
+            "value_src": "default"
+          },
+          "POLARITY": {
+            "value": "ACTIVE_LOW",
+            "value_src": "default"
+          }
+        }
+      },
+      "switch_1": {
+        "direction": "I",
+        "left": "3",
+        "right": "0"
+      },
+      "switch_0": {
+        "direction": "I",
+        "left": "3",
+        "right": "0"
+      },
+      "anode": {
+        "direction": "O",
+        "left": "0",
+        "right": "3"
+      },
+      "outseg": {
+        "direction": "O",
+        "left": "0",
+        "right": "6"
+      },
+      "btn": {
+        "direction": "I"
+      },
+      "switch_2": {
+        "direction": "I",
+        "left": "3",
+        "right": "0"
+      },
+      "switch_3": {
+        "direction": "I",
+        "left": "3",
+        "right": "0"
+      }
+    },
+    "components": {
+      "Debouncer_0": {
+        "vlnv": "xilinx.com:module_ref:Debouncer:1.0",
+        "xci_name": "seg_decoder_Debouncer_0_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "Debouncer",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "btn_in": {
+            "direction": "I"
+          },
+          "clkin": {
+            "type": "clk",
+            "direction": "I",
+            "parameters": {
+              "ASSOCIATED_RESET": {
+                "value": "reset",
+                "value_src": "constant"
+              },
+              "CLK_DOMAIN": {
+                "value": "seg_decoder_clkin",
+                "value_src": "default_prop"
+              }
+            }
+          },
+          "reset": {
+            "type": "rst",
+            "direction": "I"
+          },
+          "btn_out": {
+            "direction": "O"
+          }
+        }
+      },
+      "two_bit_counter_0": {
+        "vlnv": "xilinx.com:module_ref:two_bit_counter:1.0",
+        "xci_name": "seg_decoder_two_bit_counter_0_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "two_bit_counter",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "clk": {
+            "type": "clk",
+            "direction": "I",
+            "parameters": {
+              "ASSOCIATED_RESET": {
+                "value": "reset",
+                "value_src": "constant"
+              }
+            }
+          },
+          "reset": {
+            "type": "rst",
+            "direction": "I"
+          },
+          "count": {
+            "direction": "O",
+            "left": "1",
+            "right": "0"
+          }
+        }
+      },
+      "clk_divider_1khz": {
+        "vlnv": "xilinx.com:module_ref:clk_divider:1.0",
+        "xci_name": "seg_decoder_clk_divider_0_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "clk_divider",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "clkin": {
+            "type": "clk",
+            "direction": "I",
+            "parameters": {
+              "ASSOCIATED_RESET": {
+                "value": "reset",
+                "value_src": "constant"
+              },
+              "CLK_DOMAIN": {
+                "value": "seg_decoder_clkin",
+                "value_src": "default_prop"
+              }
+            }
+          },
+          "reset": {
+            "type": "rst",
+            "direction": "I"
+          },
+          "clkout": {
+            "direction": "O"
+          }
+        }
+      },
+      "decoder1": {
+        "vlnv": "xilinx.com:module_ref:decoder:1.0",
+        "xci_name": "seg_decoder_decoder_0_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "decoder",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "btn_in": {
+            "direction": "I"
+          },
+          "reset": {
+            "type": "rst",
+            "direction": "I"
+          },
+          "switch": {
+            "direction": "I",
+            "left": "3",
+            "right": "0"
+          },
+          "segment_out": {
+            "direction": "O",
+            "left": "6",
+            "right": "0"
+          }
+        }
+      },
+      "decoder2": {
+        "vlnv": "xilinx.com:module_ref:decoder:1.0",
+        "xci_name": "seg_decoder_decoder_0_1",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "decoder",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "btn_in": {
+            "direction": "I"
+          },
+          "reset": {
+            "type": "rst",
+            "direction": "I"
+          },
+          "switch": {
+            "direction": "I",
+            "left": "3",
+            "right": "0"
+          },
+          "segment_out": {
+            "direction": "O",
+            "left": "6",
+            "right": "0"
+          }
+        }
+      },
+      "decoder0": {
+        "vlnv": "xilinx.com:module_ref:decoder:1.0",
+        "xci_name": "seg_decoder_decoder_0_2",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "decoder",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "btn_in": {
+            "direction": "I"
+          },
+          "reset": {
+            "type": "rst",
+            "direction": "I"
+          },
+          "switch": {
+            "direction": "I",
+            "left": "3",
+            "right": "0"
+          },
+          "segment_out": {
+            "direction": "O",
+            "left": "6",
+            "right": "0"
+          }
+        }
+      },
+      "decoder3": {
+        "vlnv": "xilinx.com:module_ref:decoder:1.0",
+        "xci_name": "seg_decoder_decoder_0_3",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "decoder",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "btn_in": {
+            "direction": "I"
+          },
+          "reset": {
+            "type": "rst",
+            "direction": "I"
+          },
+          "switch": {
+            "direction": "I",
+            "left": "3",
+            "right": "0"
+          },
+          "segment_out": {
+            "direction": "O",
+            "left": "6",
+            "right": "0"
+          }
+        }
+      },
+      "multiplexer_0": {
+        "vlnv": "xilinx.com:module_ref:multiplexer:1.0",
+        "xci_name": "seg_decoder_multiplexer_0_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "multiplexer",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "sel": {
+            "direction": "I",
+            "left": "0",
+            "right": "1"
+          },
+          "btn": {
+            "direction": "I"
+          },
+          "reset": {
+            "type": "rst",
+            "direction": "I"
+          },
+          "seg0": {
+            "direction": "I",
+            "left": "0",
+            "right": "6"
+          },
+          "seg1": {
+            "direction": "I",
+            "left": "0",
+            "right": "6"
+          },
+          "seg2": {
+            "direction": "I",
+            "left": "0",
+            "right": "6"
+          },
+          "seg3": {
+            "direction": "I",
+            "left": "0",
+            "right": "6"
+          },
+          "anode": {
+            "direction": "O",
+            "left": "0",
+            "right": "3"
+          },
+          "outseg": {
+            "direction": "O",
+            "left": "0",
+            "right": "6"
+          }
+        }
+      }
+    },
+    "nets": {
+      "clkin_0_1": {
+        "ports": [
+          "clkin",
+          "Debouncer_0/clkin",
+          "clk_divider_1khz/clkin"
+        ]
+      },
+      "reset_0_1": {
+        "ports": [
+          "reset",
+          "Debouncer_0/reset",
+          "two_bit_counter_0/reset",
+          "clk_divider_1khz/reset",
+          "decoder1/reset",
+          "decoder2/reset",
+          "decoder0/reset",
+          "decoder3/reset",
+          "multiplexer_0/reset"
+        ]
+      },
+      "Debouncer_0_btn_out": {
+        "ports": [
+          "Debouncer_0/btn_out",
+          "decoder1/btn_in",
+          "decoder2/btn_in",
+          "decoder0/btn_in",
+          "decoder3/btn_in",
+          "multiplexer_0/btn"
+        ]
+      },
+      "clk_divider_1khz_clkout": {
+        "ports": [
+          "clk_divider_1khz/clkout",
+          "two_bit_counter_0/clk"
+        ]
+      },
+      "switch_0": {
+        "ports": [
+          "switch_0",
+          "decoder0/switch"
+        ]
+      },
+      "decoder_2_segment_out": {
+        "ports": [
+          "decoder0/segment_out",
+          "multiplexer_0/seg0"
+        ]
+      },
+      "two_bit_counter_0_count": {
+        "ports": [
+          "two_bit_counter_0/count",
+          "multiplexer_0/sel"
+        ]
+      },
+      "multiplexer_0_anode": {
+        "ports": [
+          "multiplexer_0/anode",
+          "anode"
+        ]
+      },
+      "multiplexer_0_outseg": {
+        "ports": [
+          "multiplexer_0/outseg",
+          "outseg"
+        ]
+      },
+      "decoder_0_segment_out": {
+        "ports": [
+          "decoder1/segment_out",
+          "multiplexer_0/seg1"
+        ]
+      },
+      "decoder_3_segment_out": {
+        "ports": [
+          "decoder3/segment_out",
+          "multiplexer_0/seg3"
+        ]
+      },
+      "decoder_1_segment_out": {
+        "ports": [
+          "decoder2/segment_out",
+          "multiplexer_0/seg2"
+        ]
+      },
+      "switch_1": {
+        "ports": [
+          "switch_1",
+          "decoder1/switch"
+        ]
+      },
+      "switch_2": {
+        "ports": [
+          "switch_2",
+          "decoder2/switch"
+        ]
+      },
+      "switch_3": {
+        "ports": [
+          "switch_3",
+          "decoder3/switch"
+        ]
+      },
+      "btn_1": {
+        "ports": [
+          "btn",
+          "Debouncer_0/btn_in"
+        ]
+      }
+    }
+  }
+}

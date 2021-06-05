@@ -1,0 +1,326 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Sat May 22 14:57:37 2021" VIVADOVERSION="2019.2">
+
+  <SYSTEMINFO ARCH="artix7" DEVICE="7a35t" NAME="seg_decoder" PACKAGE="cpg236" SPEEDGRADE="-1"/>
+
+  <EXTERNALPORTS>
+    <PORT CLKFREQUENCY="100000000" DIR="I" NAME="clkin" SIGIS="clk" SIGNAME="External_Ports_clkin">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="Debouncer_0" PORT="clkin"/>
+        <CONNECTION INSTANCE="clk_divider_1khz" PORT="clkin"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" NAME="reset" SIGIS="rst" SIGNAME="External_Ports_reset">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="Debouncer_0" PORT="reset"/>
+        <CONNECTION INSTANCE="two_bit_counter_0" PORT="reset"/>
+        <CONNECTION INSTANCE="clk_divider_1khz" PORT="reset"/>
+        <CONNECTION INSTANCE="decoder1" PORT="reset"/>
+        <CONNECTION INSTANCE="decoder2" PORT="reset"/>
+        <CONNECTION INSTANCE="decoder0" PORT="reset"/>
+        <CONNECTION INSTANCE="decoder3" PORT="reset"/>
+        <CONNECTION INSTANCE="multiplexer_0" PORT="reset"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" LEFT="3" NAME="switch_1" RIGHT="0" SIGIS="undef" SIGNAME="External_Ports_switch_1">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="decoder1" PORT="switch"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" LEFT="3" NAME="switch_0" RIGHT="0" SIGIS="undef" SIGNAME="External_Ports_switch_0">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="decoder0" PORT="switch"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" LEFT="0" NAME="anode" RIGHT="3" SIGIS="undef" SIGNAME="multiplexer_0_anode">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="multiplexer_0" PORT="anode"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" LEFT="0" NAME="outseg" RIGHT="6" SIGIS="undef" SIGNAME="multiplexer_0_outseg">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="multiplexer_0" PORT="outseg"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" NAME="btn" SIGIS="undef" SIGNAME="External_Ports_btn">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="Debouncer_0" PORT="btn_in"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" LEFT="3" NAME="switch_2" RIGHT="0" SIGIS="undef" SIGNAME="External_Ports_switch_2">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="decoder2" PORT="switch"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" LEFT="3" NAME="switch_3" RIGHT="0" SIGIS="undef" SIGNAME="External_Ports_switch_3">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="decoder3" PORT="switch"/>
+      </CONNECTIONS>
+    </PORT>
+  </EXTERNALPORTS>
+
+  <EXTERNALINTERFACES/>
+
+  <MODULES>
+    <MODULE COREREVISION="1" FULLNAME="/Debouncer_0" HWVERSION="1.0" INSTANCE="Debouncer_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="Debouncer" VLNV="xilinx.com:module_ref:Debouncer:1.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="Component_Name" VALUE="seg_decoder_Debouncer_0_0"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT DIR="I" NAME="btn_in" SIGIS="undef" SIGNAME="External_Ports_btn">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="btn"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT CLKFREQUENCY="100000000" DIR="I" NAME="clkin" SIGIS="clk" SIGNAME="External_Ports_clkin">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="clkin"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="reset" SIGIS="rst" SIGNAME="External_Ports_reset">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="reset"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="btn_out" SIGIS="undef" SIGNAME="Debouncer_0_btn_out">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="decoder1" PORT="btn_in"/>
+            <CONNECTION INSTANCE="decoder2" PORT="btn_in"/>
+            <CONNECTION INSTANCE="decoder0" PORT="btn_in"/>
+            <CONNECTION INSTANCE="decoder3" PORT="btn_in"/>
+            <CONNECTION INSTANCE="multiplexer_0" PORT="btn"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES/>
+    </MODULE>
+    <MODULE COREREVISION="1" FULLNAME="/clk_divider_1khz" HWVERSION="1.0" INSTANCE="clk_divider_1khz" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="clk_divider" VLNV="xilinx.com:module_ref:clk_divider:1.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="Component_Name" VALUE="seg_decoder_clk_divider_0_0"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT CLKFREQUENCY="100000000" DIR="I" NAME="clkin" SIGIS="clk" SIGNAME="External_Ports_clkin">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="clkin"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="reset" SIGIS="rst" SIGNAME="External_Ports_reset">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="reset"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="clkout" SIGIS="undef" SIGNAME="clk_divider_1khz_clkout">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="two_bit_counter_0" PORT="clk"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES/>
+    </MODULE>
+    <MODULE COREREVISION="1" FULLNAME="/decoder0" HWVERSION="1.0" INSTANCE="decoder0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="decoder" VLNV="xilinx.com:module_ref:decoder:1.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="Component_Name" VALUE="seg_decoder_decoder_0_2"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT DIR="I" NAME="btn_in" SIGIS="undef" SIGNAME="Debouncer_0_btn_out">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="Debouncer_0" PORT="btn_out"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="reset" SIGIS="rst" SIGNAME="External_Ports_reset">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="reset"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="3" NAME="switch" RIGHT="0" SIGIS="undef" SIGNAME="External_Ports_switch_0">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="switch_0"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="6" NAME="segment_out" RIGHT="0" SIGIS="undef" SIGNAME="decoder0_segment_out">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="multiplexer_0" PORT="seg0"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES/>
+    </MODULE>
+    <MODULE COREREVISION="1" FULLNAME="/decoder1" HWVERSION="1.0" INSTANCE="decoder1" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="decoder" VLNV="xilinx.com:module_ref:decoder:1.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="Component_Name" VALUE="seg_decoder_decoder_0_0"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT DIR="I" NAME="btn_in" SIGIS="undef" SIGNAME="Debouncer_0_btn_out">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="Debouncer_0" PORT="btn_out"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="reset" SIGIS="rst" SIGNAME="External_Ports_reset">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="reset"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="3" NAME="switch" RIGHT="0" SIGIS="undef" SIGNAME="External_Ports_switch_1">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="switch_1"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="6" NAME="segment_out" RIGHT="0" SIGIS="undef" SIGNAME="decoder1_segment_out">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="multiplexer_0" PORT="seg1"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES/>
+    </MODULE>
+    <MODULE COREREVISION="1" FULLNAME="/decoder2" HWVERSION="1.0" INSTANCE="decoder2" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="decoder" VLNV="xilinx.com:module_ref:decoder:1.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="Component_Name" VALUE="seg_decoder_decoder_0_1"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT DIR="I" NAME="btn_in" SIGIS="undef" SIGNAME="Debouncer_0_btn_out">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="Debouncer_0" PORT="btn_out"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="reset" SIGIS="rst" SIGNAME="External_Ports_reset">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="reset"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="3" NAME="switch" RIGHT="0" SIGIS="undef" SIGNAME="External_Ports_switch_2">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="switch_2"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="6" NAME="segment_out" RIGHT="0" SIGIS="undef" SIGNAME="decoder2_segment_out">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="multiplexer_0" PORT="seg2"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES/>
+    </MODULE>
+    <MODULE COREREVISION="1" FULLNAME="/decoder3" HWVERSION="1.0" INSTANCE="decoder3" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="decoder" VLNV="xilinx.com:module_ref:decoder:1.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="Component_Name" VALUE="seg_decoder_decoder_0_3"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT DIR="I" NAME="btn_in" SIGIS="undef" SIGNAME="Debouncer_0_btn_out">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="Debouncer_0" PORT="btn_out"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="reset" SIGIS="rst" SIGNAME="External_Ports_reset">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="reset"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="3" NAME="switch" RIGHT="0" SIGIS="undef" SIGNAME="External_Ports_switch_3">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="switch_3"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="6" NAME="segment_out" RIGHT="0" SIGIS="undef" SIGNAME="decoder3_segment_out">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="multiplexer_0" PORT="seg3"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES/>
+    </MODULE>
+    <MODULE COREREVISION="1" FULLNAME="/multiplexer_0" HWVERSION="1.0" INSTANCE="multiplexer_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="multiplexer" VLNV="xilinx.com:module_ref:multiplexer:1.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="Component_Name" VALUE="seg_decoder_multiplexer_0_0"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT DIR="I" LEFT="0" NAME="sel" RIGHT="1" SIGIS="undef" SIGNAME="two_bit_counter_0_count">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="two_bit_counter_0" PORT="count"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="btn" SIGIS="undef" SIGNAME="Debouncer_0_btn_out">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="Debouncer_0" PORT="btn_out"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="reset" SIGIS="rst" SIGNAME="External_Ports_reset">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="reset"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="0" NAME="seg0" RIGHT="6" SIGIS="undef" SIGNAME="decoder0_segment_out">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="decoder0" PORT="segment_out"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="0" NAME="seg1" RIGHT="6" SIGIS="undef" SIGNAME="decoder1_segment_out">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="decoder1" PORT="segment_out"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="0" NAME="seg2" RIGHT="6" SIGIS="undef" SIGNAME="decoder2_segment_out">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="decoder2" PORT="segment_out"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="0" NAME="seg3" RIGHT="6" SIGIS="undef" SIGNAME="decoder3_segment_out">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="decoder3" PORT="segment_out"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="0" NAME="anode" RIGHT="3" SIGIS="undef" SIGNAME="multiplexer_0_anode">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="anode"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="0" NAME="outseg" RIGHT="6" SIGIS="undef" SIGNAME="multiplexer_0_outseg">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="outseg"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES/>
+    </MODULE>
+    <MODULE COREREVISION="1" FULLNAME="/two_bit_counter_0" HWVERSION="1.0" INSTANCE="two_bit_counter_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="two_bit_counter" VLNV="xilinx.com:module_ref:two_bit_counter:1.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="Component_Name" VALUE="seg_decoder_two_bit_counter_0_0"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT CLKFREQUENCY="100000000" DIR="I" NAME="clk" SIGIS="clk" SIGNAME="clk_divider_1khz_clkout">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="clk_divider_1khz" PORT="clkout"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="reset" SIGIS="rst" SIGNAME="External_Ports_reset">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="reset"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="1" NAME="count" RIGHT="0" SIGIS="undef" SIGNAME="two_bit_counter_0_count">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="multiplexer_0" PORT="sel"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES/>
+    </MODULE>
+  </MODULES>
+
+</EDKSYSTEM>

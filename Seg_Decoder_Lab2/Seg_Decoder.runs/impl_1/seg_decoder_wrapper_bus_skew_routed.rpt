@@ -1,0 +1,15 @@
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2019.2 (win64) Build 2708876 Wed Nov  6 21:40:23 MST 2019
+| Date         : Sat May 22 15:08:47 2021
+| Host         : DW-245 running 64-bit major release  (build 9200)
+| Command      : report_bus_skew -warn_on_violation -file seg_decoder_wrapper_bus_skew_routed.rpt -pb seg_decoder_wrapper_bus_skew_routed.pb -rpx seg_decoder_wrapper_bus_skew_routed.rpx
+| Design       : seg_decoder_wrapper
+| Device       : 7a35t-cpg236
+| Speed File   : -1  PRODUCTION 1.23 2018-06-13
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Bus Skew Report
+
+No bus skew constraints
+
